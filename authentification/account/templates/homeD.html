@@ -1,0 +1,18 @@
+
+{% extends 'gestionnaire/layout.html' %}
+
+{% block content %}
+    <h1><marquee >DIRECTEUR</marquee></h1>
+
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'employes_list' %}">LISTE RESERVATION</a>
+    </li> 
+
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'employes_list' %}">CONTROLEUR</a>
+    </li> 
+
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'employes_list' %}">SUPERVISEUR</a>
+    </li>
+{% endblock %}

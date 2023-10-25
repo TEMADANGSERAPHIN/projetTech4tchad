@@ -1,0 +1,49 @@
+{% extends 'employe/layout.html' %}
+
+{% block content %}
+	<h1 align="center" style="color:green;">DONNEE TRAFIC</h1>
+	<style>
+	h1
+	{
+		color: peru;
+	}
+	.couleur
+	{
+		background-color: green;
+	}
+	</style>
+	<div class="col-12 d-flex justify-content-end mb-2"> 
+		<a class="btn btn-primary sm " href="{% url 'add_recu' %}"> NOUVEAU DONNE TRAFIC </a>
+	</div>
+		<table class="table table-bordered table-striped table-hover">
+		  <thead class="couleur">
+			<tr>
+              <th>date</th>
+			  <th>montant</th>
+			  <th>reste</th>
+              <th>numero</th>
+              <th>employe</th>
+			  <th width="250px">option</th>
+			</tr>
+		  </thead>
+		  <tbody>
+			{% if recus %} 
+			{% for recu  in recus %} 
+			<tr class="success">
+			  <td>{{recu.date}}</td>
+			  <td>{{recu.montant}}</td>
+			  <td>{{recu.reste}}</td>
+              <td>{{recu.numero}}</td>
+              <td>{{recu.employe}}</td>
+			 <td>
+				 <a class="btn btn-outline-warning sm"  href="{% url 'update_recu' recu.id %}">Modifier</a>
+				 <a class="btn btn-outline-danger sm" href="{% url 'delete_recu' recu.id %}" onclick="return confirm('Etes-vous sûr de vouloir supprimer cette DONNEE TRAFIC ?')">Supprimer</a>
+			 </td>
+			</tr>
+			{% endfor %}
+			{% endif %}
+
+		  </tbody>
+		</table>
+
+{% endblock %}

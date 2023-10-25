@@ -1,0 +1,53 @@
+{% extends 'gestionnaire/layout.html' %}
+
+{% block content %}
+	<h1 align="center" style="color:GREEN;">LISTE DE Reservation</h1>
+	<style>
+	h1
+	{
+		color: black;
+	}
+	.couleur
+	{
+		background-color:green;
+	}
+	</style>
+	<div class="col-12 d-flex justify-content-end mb-2"> 
+		<a class="btn btn-primary sm " href="{% url 'add_employe' %}"> NOUVEAU Reservation </a>
+	</div>
+		<table class="table table-bordered table-striped table-hover">
+		  <thead class="couleur">
+			<tr>
+              <th>ville_depart</th>
+			  <th>ville_arrive</th>
+			  <th>type</th>
+			  <th>date</th>
+			  <th>nom</th>
+			  <th>Email</th>
+			  <th>phone</th>
+			  <th>details</th>
+			  <th>Details</th>
+			</tr>
+		  </thead>
+		  <tbody>
+			           
+			{% for reservation  in  reservations %} 
+			<tr class="success">
+			  <td>{{reservation.ville_depart}}</td>
+			  <td>{{reservation.ville_arrive}}</td>
+			  <td>{{reservation.type}}</td>
+			  <td>{{reservation.date}}</td>
+			  <td>{{reservation.nom}}</td>
+			  <td>{{reservation.email}}</td>
+              <td>{{reservation.phone}}</td>
+			  <td>{{reservation.details}}</td>
+			 <td><a class="btn btn-outline-info sm" href="{% url 'show_employe' reservation.id %}">
+				Details
+			</a></td>
+			</tr>
+			{% endfor %}
+			
+		  </tbody>
+		</table>
+
+{% endblock %}

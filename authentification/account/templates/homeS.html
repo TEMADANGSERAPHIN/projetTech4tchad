@@ -1,0 +1,24 @@
+
+{% extends 'gestionnaire/layout.html' %}
+
+{% block content %}
+    <h1><marquee >CONTROLEUR</marquee></h1>
+
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'employes_list' %}">RESERVATION</a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'recu_listBan' %}">PAYEMENT BANCAIRE</a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'recu_list' %}">PAYEMENT TELEPHONIE</a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'recu_listAg' %}">PAYEMENT PAR AGENCE</a>
+    </li>
+
+    
+{% endblock %}
