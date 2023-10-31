@@ -1,0 +1,82 @@
+{%extends 'gestionnaire/layout.html' %}
+
+{%block content%}
+<div class="row">
+	<div class="col-sm-2"></div>
+	
+  
+<div class="shadow p-4 mb-5 bg-body rounded col-md-8">
+	<center>
+
+		<h3>RESERVATION</h3>
+	</br>
+	<table class="table table-bordered table-striped table-hover">
+		<tbody>            
+		  <tr class="success"> 
+			<td><strong>ID: </strong>{{reservation_id}}</td>
+		  </tr>
+
+		  <tr class="success"> 
+			  <td><strong>ville_depart:</strong> {{reservation.ville_depart}}</td>
+		  </tr>
+
+
+      	  <tr class="success"> 
+			<td><strong>ville_arrive:</strong> {{reservation.ville_arrive}}</td>
+		  </tr>
+
+
+		  <tr class="success"> 
+			<td><strong>agences:</strong> {{reservation.agences}}</td>
+		  </tr>
+
+
+          <tr class="success"> 
+            <td><strong>type:</strong> {{reservation.type}}</td>
+          </tr>
+
+
+          <tr class="success"> 
+			<td><strong>nombre_services:</strong> {{reservation.nombre_services}}</td>
+		  </tr>
+
+
+          <tr class="success"> 
+        	<td><strong>date:</strong> {{reservation.date}}</td>
+          </tr>
+      
+
+      	  <tr class="success"> 
+			<td><strong>nom:</strong> {{reservation.nom}}</td>
+		  </tr>
+
+
+          <tr class="success"> 
+            <td><strong>email:</strong> {{reservation.email}}</td>
+          </tr>
+
+          <tr class="success"> 
+            <td><strong>phone:</strong> {{reservation.phone}}</td>
+          </tr>
+
+	      <tr class="success"> 
+            <td><strong>somme_paye:</strong> {{reservation.somme_paye}}</td>
+          </tr>
+      
+
+          <tr class="success"> 
+            <td><strong>Details:</strong> {{reservation.details}}</td>
+          </tr>   
+		</tbody>
+	</table>
+
+        <div class="col-12 d-flex justify-content-end mb-2">
+            <a class="btn btn-warning sm mx-2" href="{% url 'update_employe' reservation.id %}"> Modifier </a>
+            <a class="btn btn-danger sm mx-2" href="{% url 'delete_employe' reservation.id %}" onclick="return confirm('Etes-vous sûr de vouloir supprimer cet reservation ?')"> Supprimer </a> 
+            <a class="btn btn-info sm mx-2" href="{% url 'employes_list' %}"> Retour </a>
+        </div>
+
+	</center>
+</div>
+</div> 
+{%endblock%}

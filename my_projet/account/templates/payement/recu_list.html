@@ -1,0 +1,55 @@
+{% extends 'gestionnaire/layout.html' %}
+
+{% block content %}
+	<h1 align="center" style="color:green;">DONNEE TELEPHONIQUE</h1>
+	<style>
+	h1
+	{
+		color: peru;
+	}
+	.couleur
+	{
+		background-color: green;
+	}
+	</style>
+	<div class="col-12 d-flex justify-content-end mb-2"> 
+		
+		<a class="btn btn-primary sm " href="{% url 'add_recu' %}"> NOUVEAU PAYEMENTS </a>
+	</div>
+		<table class="table table-bordered table-striped table-hover">
+			<a class="btn btn-primary sm " href=" homeS.html "> RETOUR </a>
+		  <thead class="couleur">
+			<tr>
+              <th>nom</th>
+			  <th>email</th>
+			  <th>agences</th>
+			  <th>somme</th>
+			  <th>service</th>
+              <th>destination</th>
+              <th>telephone</th>
+			  <th width="250px">option</th>
+			</tr>
+		  </thead>
+		  <tbody>
+			{% if payetel %} 
+			{% for payetel  in payetel %} 
+			<tr class="success">
+			  <td>{{payetel.nom}}</td>
+			  <td>{{payetel.email}}</td>
+			  <td>{{payetel.agences}}</td>
+			  <td>{{payetel.somme}}</td>
+			  <td>{{payetel.service}}</td>
+              <td>{{payetel.destination}}</td>
+              <td>{{payetel.telephone}}</td>
+			 <td>
+				 <a class="btn btn-outline-warning sm"  href="{% url 'update_recu' payetel.id %}">Modifier</a>
+				 <a class="btn btn-outline-danger sm" href="{% url 'delete_recu' payetel.id %}" onclick="return confirm('Etes-vous sûr de vouloir supprimer cette DONNEE DE PAYEMENT TELEPHONIQUE ?')">Supprimer</a>
+			 </td>
+			</tr>
+			{% endfor %}
+			{% endif %}
+
+		  </tbody>
+		</table>
+
+{% endblock %}

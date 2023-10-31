@@ -1,0 +1,51 @@
+{% extends 'gestionnaire/layout.html' %}
+
+{% block content %}
+	<style>
+	h1
+	{
+		color: black;
+	}
+	.couleur
+	{
+		background-color:green;
+	}
+	</style>
+	<div class="col-12 d-flex justify-content-end mb-2"> 
+	</div>
+		<table class="table table-bordered table-striped table-hover">
+		  <thead class="couleur">
+			<tr>
+              <th>nom</th>
+			  <th>adresse</th>
+			  <th>genre</th>
+			  <th>status</th>
+			  <th>contrat</th>
+			  <th>phone</th>
+			  <th>email</th>
+			  <th>photo</th>
+			</tr>
+		  </thead>
+		  <tbody>
+			           
+			{% for directeur  in  directeurs %} 
+			<tr class="success">
+			  <td>{{directeur.nom}}</td>
+			  <td>{{directeur.adresse}}</td>
+			  <td>{{directeur.genre}}</td>
+			  <td>{{directeur.status}}</td>
+			  <td>{{directeur.contrat}}</td>
+              <td>{{directeur.phone}}</td>
+			  <td>{{directeur.email}}</td>
+			  {% if directeur.photo %}
+             	 <td> <img src="{{directeur.photo.url}}" width="25px" class="rounded-circle" > </td>
+			  {% endif %}
+
+			</a></td>
+			</tr>
+			{% endfor %}
+			
+		  </tbody>
+		</table>
+
+{% endblock %}

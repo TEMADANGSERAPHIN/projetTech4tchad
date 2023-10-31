@@ -1,0 +1,41 @@
+{% extends 'gestionnaire/layout.html' %}
+
+{% block content %}
+	<h1 align="center" style="color:green;">LISTE DE CONTACT ET LEURS SUGGESTION</h1>
+	<style>
+	h1
+	{
+		color: peru;
+	}
+	.couleur
+	{
+		background-color: green;
+	}
+	</style>
+		<table class="table table-bordered table-striped table-hover">
+			<a class="btn btn-primary sm " href=" home1.html "> RETOUR </a>
+		  <thead class="couleur">
+			<tr>
+              <th>nom</th>
+			  <th>email</th>
+			  <th>sujet</th>
+              <th>message</th>
+			</tr>
+		  </thead>
+		  <tbody>
+			{% if contact %} 
+			{% for contact  in contact %} 
+			<tr class="success">
+			  <td>{{contact.nom}}</td>
+			  <td>{{contact.email}}</td>
+			  <td>{{contact.sujet}}</td>
+              <td>{{contact.message}}</td>			 
+			 </td>
+			</tr>
+			{% endfor %}
+			{% endif %}
+
+		  </tbody>
+		</table>
+
+{% endblock %}

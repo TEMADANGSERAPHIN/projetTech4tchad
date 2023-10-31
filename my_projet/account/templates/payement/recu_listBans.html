@@ -1,0 +1,48 @@
+{% extends 'gestionnaire/layout.html' %}
+
+{% block content %}
+	<h1 align="center" style="color:green;">DONNEE BANCAIRE</h1>
+	<style>
+	h1
+	{
+		color: peru;
+	}
+	.couleur
+	{
+		background-color: green;
+	}
+	</style>
+	<div class="col-12 d-flex justify-content-end mb-2"> 
+	</div>
+		<table class="table table-bordered table-striped table-hover">
+			<a class="btn btn-primary sm " href=" home1.html "> RETOUR </a>
+		  <thead class="couleur">
+			<tr>
+				<th>nom</th>
+				<th>email</th>
+				<th>somme</th>
+				<th>agences</th>
+				<th>service</th>
+				<th>destination</th>
+              	<th>banque</th>
+			</tr>
+		  </thead>
+		  <tbody>
+			{% if banque %} 
+			{% for banque  in banque %} 
+			<tr class="success">
+				<td>{{banque.nom}}</td>
+				<td>{{banque.email}}</td>
+				<td>{{banque.somme}}</td>
+				<td>{{banque.agences}}</td>
+				<td>{{banque.service}}</td>
+				<td>{{banque.destination}}</td>
+              <td>{{banque.banque}}</td>
+			</tr>
+			{% endfor %}
+			{% endif %}
+
+		  </tbody>
+		</table>
+
+{% endblock %}

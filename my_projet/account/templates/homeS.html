@@ -1,0 +1,47 @@
+
+{% extends 'gestionnaire/layout.html' %}
+{% block content %}
+    <h1><marquee >CONTROLEUR</marquee></h1>
+
+        
+
+
+
+    <div class="d-grid gap-3">
+        <a  class="nav-link" href="{% url 'employes_list' %}">RESERVATION</a>
+
+        <a class="nav-link"  href="{% url 'recu_listBan' %}">PAYEMENT BANCAIRE</a>
+
+        <a class="nav-link" href="{% url 'recu_list' %}">PAYEMENT TELEPHONIE</a>
+
+        <a  class="nav-link" href="{% url 'recu_listAg' %}">PAYEMENT PAR AGENCE</a>
+
+        <h2><a class="btn btn-primary sm " class="nav-link" href=" home.html "> RETOUR </a></h2>
+      </div>
+      
+      <style>
+          a.nav-link {
+              display: block;
+              width: 700%;
+              padding: 0.5rem 0.5rem;
+              text-align: center;
+              background-color: #007bff;
+              color: #fff;
+              border-radius: 0.25rem;
+              margin-bottom: 0.75rem;
+              margin-left: auto;
+              margin-right: auto;
+            }
+            
+            .d-grid {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              position: absolute;
+              top: 60%;
+              transform: translateY(-70%);
+            }
+      </style>
+
+    
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'gestionnaire/layout.html' %}
+
+{% block content %}
+	<h1 align="center" style="color:GREEN;">LISTE DE RESERVATION</h1>
+	<style>
+	h1
+	{
+		color: black;
+	}
+	.couleur
+	{
+		background-color:green;
+	}
+	</style>
+	<div class="col-12 d-flex justify-content-end mb-2"> 
+	</div>
+		<table class="table table-bordered table-striped table-hover">
+			<a class="btn btn-primary sm " href=" home.html "> RETOUR </a>
+		  <thead class="couleur">
+			<tr>
+				<th>ville_depart</th>
+				<th>ville_arrive</th>
+				<th>agences</th>
+				<th>type</th>
+				<th>nombre_services</th>
+				<th>date</th>
+				<th>nom</th>
+				<th>Email</th>
+				<th>phone</th>
+				<th>somme_paye</th>
+			</tr>
+		  </thead>
+		  <tbody>
+			           
+			{% for reservation  in  reservations %} 
+			<tr class="success">
+				<td>{{reservation.ville_depart}}</td>
+				<td>{{reservation.ville_arrive}}</td>
+				<td>{{reservation.agences}}</td>
+				<td>{{reservation.type}}</td>
+				<td>{{reservation.nombre_services}}</td>
+				<td>{{reservation.date}}</td>
+				<td>{{reservation.nom}}</td>
+				<td>{{reservation.email}}</td>
+				<td>{{reservation.phone}}</td>
+				<td>{{reservation.somme_paye}}</td>
+			</a></td>
+			</tr>
+			{% endfor %}
+			
+		  </tbody>
+		</table>
+
+{% endblock %}
