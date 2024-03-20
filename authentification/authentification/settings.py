@@ -68,9 +68,9 @@ WSGI_APPLICATION = 'authentification.wsgi.application'
 DATABASES = {
     'default': {
     'ENGINE': 'django.db.backends.mysql',
-    'NAME': 'tchadT1',
+    'NAME': 'SNE',
     'USER': 'root',
-    'PASSWORD': 'Tema@@200',
+    'PASSWORD': 'Tema@@199se',
     'HOST': '127.0.0.1',
     'PORT': '3306' ,
     }
